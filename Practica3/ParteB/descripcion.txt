@@ -1,0 +1,20 @@
+MODULE_LICENSE("GPL");
+MODULE_DESCRIPTION("Blinkdr -> Kernel Module -> LIN -> FDI-UCM");
+MODULE_AUTHOR("Badr Guaitoune Akdi - Gonzalo Fernandez Megia");
+
+
+El Programa tiene un Menu con varias funciones que se ejecutan con threads.
+case 'A':   printf("MODELO A -> ESTILO MATRIZ DE PUNTOS\n"); -> Ejecuta como si fuese una matriz de puntos el texto introducido con la opcion T,Ejemplo: Hola, se ejecuta primero la H con su intensidad, luego la Ho asi sucesivamente con los diferentes colores que permite los leds.
+case 'T':   printf("INTRODUCE TEXTO A MOSTRAR -> MAX = [%d] bytes: ",MAX_LENGHT); -> Se introduce el texo a mostrar.
+case 'R':   printf("MODELO R -> ESTILO RANDOM\n"); -> Ejecuta el texto introducido de forma Random en los leds, con colores random tambien pero con la intensidad de la letra a mostrar.
+case 'M':  printf("MODELO M -> MODO CODIGO MORSE\n"); -> Ejecuta una a una las letras en su codigo utilizando todos los leds, cambia de color cuando ejecuta la secuencia completa.
+case 'E':  printf("MODELO E -> SALIENDO\n"); return 0;break; -> Salir;
+case 'H':  printf("MODELO A -> ESTILO MATRIZ DE PUNTOS\n"); -> Muestra el Menu;
+
+Cada Modo se ejecuta con su thread, este thread se para cuando se cambia de modo.
+
+void tableString(char *str_leds, int patron): -> Esta funcion devuelve el string para escribir en el driver.
+
+
+
+
